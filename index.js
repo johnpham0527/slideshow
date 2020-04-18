@@ -3,9 +3,9 @@
 
 
 
-const advanceSlide = (slideNumber) => {
+const advanceSlide = (slideNumber, maxSlides) => {
     //return the increment of currentSlide unless it is at the last slide. If so, return zero;
-    return slideNumber + 1 === picturesArray.length ?
+    return slideNumber + 1 === maxSlides ?
         0 :
         slideNumber + 1;
 }
@@ -22,14 +22,14 @@ class Slideshow {
     }
 
     displaySlide() {
-        this.currentSlide = advanceSlide(this.currentSlide);
-        return `<img src="${picturesURL + picturesArray[currentSlide]}" alt="Slideshow">`;
+        this.currentSlide = advanceSlide(this.currentSlide, this.picturesArray.length);
+        return `<img src="${this.picturesURL + this.picturesArray[this.currentSlide]}" alt="Slideshow">`;
     }
 }
 
 let mySlideshow = new Slideshow();
-document.getElementById("app").innerHTML = "hello world";
-
+//document.getElementById("app").innerHTML = "hello world";
+document.getElementById("app").innerHTML = mySlideshow.displaySlide();
 
 //let slide = document.getElementById("app");
 //slide.innerHTML = `<img src="${picturesURL + picturesArray[currentSlide]}" alt="Slideshow">`;

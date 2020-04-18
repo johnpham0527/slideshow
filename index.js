@@ -23,13 +23,15 @@ class Slideshow {
 
     displaySlide() {
         this.currentSlide = advanceSlide(this.currentSlide, this.picturesArray.length); //increment
-        return `<img src="${this.picturesURL + this.picturesArray[this.currentSlide]}" alt="Slideshow">`; //return the img tag
+        //return `<img src="${this.picturesURL + this.picturesArray[this.currentSlide]}" alt="Slideshow">`; //return the img tag
+        document.getElementById("app").innerHTML = `<img src="${this.picturesURL + this.picturesArray[this.currentSlide]}" alt="Slideshow">`;
     }
 }
 
 let mySlideshow = new Slideshow();
-//document.getElementById("app").innerHTML = "hello world";
-document.getElementById("app").innerHTML = mySlideshow.displaySlide();
+//document.getElementById("app").innerHTML = mySlideshow.displaySlide();
+mySlideshow.displaySlide();
+mySlideshow.displaySlide();
 
 //let slide = document.getElementById("app");
 //slide.innerHTML = `<img src="${picturesURL + picturesArray[currentSlide]}" alt="Slideshow">`;
@@ -37,4 +39,4 @@ document.getElementById("app").innerHTML = mySlideshow.displaySlide();
 //slide.innerHTML  = currentSlide;
 //slide.innerHTML = `<img src="${picturesURL + picturesArray[currentSlide]}" alt="Slideshow">`;
 
-//setInterval(displaySlide(currentSlide))
+//setInterval(displaySlide()

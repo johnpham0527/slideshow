@@ -12,7 +12,7 @@ const advanceSlide = (slideNumber, maxSlides) => {
 
 class Slideshow {
     constructor() {
-        this.currentSlide = 0;
+        this.currentSlide = -1; //calling displaySlide will automatically increment this to 0
         this.picturesURL = "./feature/";
         this.picturesArray = [
             "feature_back_of_head.jpg",
@@ -22,8 +22,8 @@ class Slideshow {
     }
 
     displaySlide() {
-        this.currentSlide = advanceSlide(this.currentSlide, this.picturesArray.length);
-        return `<img src="${this.picturesURL + this.picturesArray[this.currentSlide]}" alt="Slideshow">`;
+        this.currentSlide = advanceSlide(this.currentSlide, this.picturesArray.length); //increment
+        return `<img src="${this.picturesURL + this.picturesArray[this.currentSlide]}" alt="Slideshow">`; //return the img tag
     }
 }
 

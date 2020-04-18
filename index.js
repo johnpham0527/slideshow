@@ -17,17 +17,18 @@ const advanceSlide = (slideNumber) => {
         slideNumber + 1;
 }
 
-const displaySlide = () => {
+const displaySlide = (slideNumber) => {
     //call advanceSlide, then output the img tag HTML
-    
-
+    let nextSlide = advanceSlide(slideNumber);
+    let slide = document.getElementById("app");
+    slide.innerHTML = `<img src="${picturesURL + picturesArray[nextSlide]}" alt="Slideshow">`;
 
 }
 
 
 
-let slide = document.getElementById("app");
-slide.innerHTML = `<img src="${picturesURL + picturesArray[currentSlide]}" alt="Slideshow">`;
-currentSlide = advanceSlide(currentSlide); 
-slide.innerHTML  = currentSlide;
+//let slide = document.getElementById("app");
+//slide.innerHTML = `<img src="${picturesURL + picturesArray[currentSlide]}" alt="Slideshow">`;
+//currentSlide = advanceSlide(currentSlide); 
+//slide.innerHTML  = currentSlide;
 //slide.innerHTML = `<img src="${picturesURL + picturesArray[currentSlide]}" alt="Slideshow">`;

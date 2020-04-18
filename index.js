@@ -10,19 +10,9 @@ const advanceSlide = (slideNumber) => {
         slideNumber + 1;
 }
 
-function displaySlide() {
-    //this function has the side effect of incrementing currentSlide
-    //call advanceSlide, then output the img tag HTML
-    currentSlide = advanceSlide(slideNumber);
-    let slide = document.getElementById("app");
-    slide.innerHTML = `<img src="${picturesURL + picturesArray[currentSlide]}" alt="Slideshow">`;
-
-}
-
 class Slideshow {
     constructor() {
         this.currentSlide = 0;
-        this.slideshow = document.getElementById("app");
         this.picturesURL = "./feature/";
         this.picturesArray = [
             "feature_back_of_head.jpg",
@@ -32,13 +22,13 @@ class Slideshow {
     }
 
     displaySlide() {
-        this.currentSlide = advanceSlide(slideNumber);
-        slideshow.innerHTML = `<img src="${picturesURL + picturesArray[currentSlide]}" alt="Slideshow">`;
-    
+        this.currentSlide = advanceSlide(this.currentSlide);
+        return `<img src="${picturesURL + picturesArray[currentSlide]}" alt="Slideshow">`;
     }
 }
 
 let mySlideshow = new Slideshow();
+document.getElementById("app").innerHTML = "hello world";
 
 
 //let slide = document.getElementById("app");

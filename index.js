@@ -19,7 +19,7 @@ function displaySlide() {
 
 }
 
-class Slide {
+class Slideshow {
     constructor() {
         this.currentSlide = 0;
         this.slideshow = document.getElementById("app");
@@ -38,6 +38,7 @@ class Slide {
     }
 }
 
+let mySlideshow = new Slideshow();
 
 
 //let slide = document.getElementById("app");

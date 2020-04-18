@@ -31,7 +31,7 @@ class Slideshow {
 let mySlideshow = new Slideshow();
 //document.getElementById("app").innerHTML = mySlideshow.displaySlide();
 mySlideshow.displaySlide();
-mySlideshow.displaySlide();
+
 
 //let slide = document.getElementById("app");
 //slide.innerHTML = `<img src="${picturesURL + picturesArray[currentSlide]}" alt="Slideshow">`;
@@ -39,4 +39,4 @@ mySlideshow.displaySlide();
 //slide.innerHTML  = currentSlide;
 //slide.innerHTML = `<img src="${picturesURL + picturesArray[currentSlide]}" alt="Slideshow">`;
 
-//setInterval(displaySlide()
+let timer = setInterval(mySlideshow.displaySlide(), 100); //need to debug

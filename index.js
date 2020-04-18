@@ -1,14 +1,7 @@
 'use strict';
 
-let picturesURL = "./feature/";
 
-let picturesArray = [
-    "feature_back_of_head.jpg",
-    "feature_blastula.jpg",
-    "feature_blue_figure.jpg"
-];
 
-let currentSlide = 0;
 
 const advanceSlide = (slideNumber) => {
     //return the increment of currentSlide unless it is at the last slide. If so, return zero;
@@ -17,12 +10,32 @@ const advanceSlide = (slideNumber) => {
         slideNumber + 1;
 }
 
-const displaySlide = (slideNumber) => {
+function displaySlide() {
+    //this function has the side effect of incrementing currentSlide
     //call advanceSlide, then output the img tag HTML
-    let nextSlide = advanceSlide(slideNumber);
+    currentSlide = advanceSlide(slideNumber);
     let slide = document.getElementById("app");
-    slide.innerHTML = `<img src="${picturesURL + picturesArray[nextSlide]}" alt="Slideshow">`;
+    slide.innerHTML = `<img src="${picturesURL + picturesArray[currentSlide]}" alt="Slideshow">`;
 
+}
+
+class Slide {
+    constructor() {
+        this.currentSlide = 0;
+        this.slideshow = document.getElementById("app");
+        this.picturesURL = "./feature/";
+        this.picturesArray = [
+            "feature_back_of_head.jpg",
+            "feature_blastula.jpg",
+            "feature_blue_figure.jpg"
+        ];
+    }
+
+    displaySlide() {
+        this.currentSlide = advanceSlide(slideNumber);
+        slideshow.innerHTML = `<img src="${picturesURL + picturesArray[currentSlide]}" alt="Slideshow">`;
+    
+    }
 }
 
 
@@ -32,3 +45,5 @@ const displaySlide = (slideNumber) => {
 //currentSlide = advanceSlide(currentSlide); 
 //slide.innerHTML  = currentSlide;
 //slide.innerHTML = `<img src="${picturesURL + picturesArray[currentSlide]}" alt="Slideshow">`;
+
+//setInterval(displaySlide(currentSlide))

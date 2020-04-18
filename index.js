@@ -9,16 +9,25 @@ let picturesArray = [
 ];
 
 let currentSlide = 0;
-let maxSlides = picturesArray.length;
 
-const advanceSlide = () => {
+const advanceSlide = (slideNumber) => {
     //return the increment of currentSlide unless it is at the last slide. If so, return zero;
-    return ++currentSlide == maxSlides ?
+    return slideNumber + 1 === picturesArray.length ?
         0 :
-        slideNumber;
+        slideNumber + 1;
 }
+
+const displaySlide = () => {
+    //call advanceSlide, then output the img tag HTML
+    
+
+
+}
+
+
 
 let slide = document.getElementById("app");
 slide.innerHTML = `<img src="${picturesURL + picturesArray[currentSlide]}" alt="Slideshow">`;
-currentSlide = advanceSlide(); 
-slide.innerHTML = `<img src="${picturesURL + picturesArray[currentSlide]}" alt="Slideshow">`;
+currentSlide = advanceSlide(currentSlide); 
+slide.innerHTML  = currentSlide;
+//slide.innerHTML = `<img src="${picturesURL + picturesArray[currentSlide]}" alt="Slideshow">`;

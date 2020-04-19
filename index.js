@@ -39,7 +39,7 @@ window.onload = () => {
 /*** Display next slide */
 const display = () => {
 
-  if (count === max) {
+  if (count === MAXSLIDES) {
     count = 0
   } 
   

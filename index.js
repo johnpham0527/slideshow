@@ -10,6 +10,8 @@ const advanceSlide = (slideNumber, maxSlides) => {
         slideNumber + 1;
 }
 
+const reducer = () => {};
+
 class Slideshow {
     constructor() {
         this.currentSlide = -1; //calling displaySlide will automatically increment this to 0

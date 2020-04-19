@@ -1,5 +1,7 @@
 'use strict';
 
+
+
 let test = document.getElementById("app");
 const URL = "http://www.john-pham.com/audreybergensten/feature/";
 let picturesArray = [
@@ -10,6 +12,15 @@ let picturesArray = [
 
 let count = 0;
 let max = 3;
+
+window.onload = () => {
+    setTimeout(() => {
+        for (let i = 0; i < picturesArray.length; i++) {
+            new Image().src = URL + picturesArray[i];
+        }
+        
+    }, 1000)
+};
 
 
 const display = () => {

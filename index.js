@@ -55,7 +55,7 @@ function addLoadEvent(func) {
 
 addLoadEvent(preloader);
 
-/*** Display next slide */
+/*** Function to display next slide */
 const display = () => {
 
   if (count === MAXSLIDES) {
@@ -69,3 +69,8 @@ const display = () => {
 
 /*** Advance to the next slide every two seconds */
 let slideShowTimer = setInterval(display, 1000);
+
+/*** To-do */
+/*
+[ ] Implement CSS fade in and fade out
+*/

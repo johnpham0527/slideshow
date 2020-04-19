@@ -9,16 +9,15 @@ let picturesArray = [
         ];
 
 let count = 0;
-let max = picturesArray.length;
+const MAXSLIDES = picturesArray.length;
 
 /*** Pre-fetch images */
 window.onload = () => {
     setTimeout(() => {
-        for (let i = 0; i < picturesArray.length; i++) {
+        for (let i = 0; i < MAXSLIDES; i++) {
             new Image().src = URL + picturesArray[i];
         }
-        
-    }, 1000)
+    }, 1000) //set this function to load every 1000 milliseconds so that it doesn't interfere with the rest of the page's loading
 };
 
 /*** Display next slide */

@@ -2,7 +2,7 @@
 
 
 
-
+/*
 const advanceSlide = (slideNumber, maxSlides) => {
     //return the increment of currentSlide unless it is at the last slide. If so, return zero;
     return slideNumber + 1 === maxSlides ?
@@ -42,3 +42,33 @@ mySlideshow.displaySlide();
 //slide.innerHTML = `<img src="${picturesURL + picturesArray[currentSlide]}" alt="Slideshow">`;
 
 let timer = setInterval(mySlideshow.displaySlide(), 100); //need to debug
+*/
+
+let test = document.getElementById("app");
+const URL = "http://www.john-pham.com/audreybergensten/feature/";
+let picturesArray = [
+            "feature_back_of_head.jpg",
+            "feature_blastula.jpg",
+            "feature_blue_figure.jpg"
+        ];
+
+
+let count = 0;
+let max = 3;
+
+
+const display = () => {
+
+  if (count === max) {
+    count = 0
+  } 
+  
+  //test.innerHTML = count++;
+  let outputLink = URL + picturesArray[count++];
+  //test.innerHTML = `${outputLink}`;
+  
+  test.innerHTML = `<img src=${outputLink} alt="slideshow">`;
+  
+ }
+
+let timer = setInterval(display, 1000);

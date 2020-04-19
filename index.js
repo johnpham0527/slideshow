@@ -28,13 +28,32 @@ let count = 0;
 const MAXSLIDES = picturesArray.length;
 
 /*** Pre-fetch images */
-window.onload = () => {
-    setTimeout(() => {
+function preloader() {
+    if (document.images) {
+        let images = new Array();
         for (let i = 0; i < MAXSLIDES; i++) {
-            new Image().src = URL + picturesArray[i];
+            images[i].src = new Image();
+            images[i].src = URL + picturesArray[i];
         }
-    }, 1000) //set this function to load every 1000 milliseconds so that it doesn't interfere with the rest of the page's loading
-};
+    }
+}
+
+function addLoadEvent(func) {
+    var oldOnload = window.onload;
+    if (typeof window.onload != "function") {
+        window.onload = func;
+    }
+    else {
+        window.onload = function() {
+            if (oldOnload) {
+                oldOnload();
+            }
+            func();
+        }
+    }
+}
+
+addLoadEvent(preloader);
 
 /*** Display next slide */
 const display = () => {
@@ -49,4 +68,4 @@ const display = () => {
 }
 
 /*** Advance to the next slide every two seconds */
-let slideShowTimer = setInterval(display, 2000);
+let slideShowTimer = setInterval(display, 1000);

@@ -51,6 +51,11 @@ function addLoadEvent(func) {
 
 addLoadEvent(preloader);
 
+/*** Function to fade in */
+const fadeIn = () => {
+    //https://www.digitalocean.com/community/tutorials/how-to-modify-attributes-classes-and-styles-in-the-dom
+}
+
 /*** Function to display next slide */
 const display = () => {
 
@@ -62,6 +67,7 @@ const display = () => {
   test.innerHTML = `<img src=${outputLink} alt="slideshow">`;
   
 }
+
 
 /*** Advance to the next slide every two seconds */
 let interval = 1000;

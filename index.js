@@ -64,7 +64,8 @@ const display = () => {
 }
 
 /*** Advance to the next slide every two seconds */
-let slideShowTimer = setInterval(display, 1000);
+let interval = 1000;
+let slideShowTimer = setInterval(display, interval);
 
 /*** To-do */
 /*

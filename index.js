@@ -29,12 +29,8 @@ const MAXSLIDES = picturesArray.length;
 
 /*** Pre-fetch images */
 function preloader() {
-    if (document.images) {
-        let images = new Array();
-        for (let i = 0; i < MAXSLIDES; i++) {
-            images[i].src = new Image();
-            images[i].src = URL + picturesArray[i];
-        }
+    for (let i = 0; i < MAXSLIDES; i++) {
+        new Image().src = URL + picturesArray[i];
     }
 }
 

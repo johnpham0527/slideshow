@@ -53,13 +53,11 @@ addLoadEvent(preloader);
 
 /*** Function to fade in */
 const setFadeIn = () => {
-    //https://www.digitalocean.com/community/tutorials/how-to-modify-attributes-classes-and-styles-in-the-dom
     let slide = document.querySelector("#app");
     slide.classList.add("fadeIn");
 }
 
 const setFadeOut = () => {
-    //https://www.digitalocean.com/community/tutorials/how-to-modify-attributes-classes-and-styles-in-the-dom
     let slide = document.querySelector("#app");
     slide.classList.remove("fadeIn");
     slide.classList.add("fadeOut");
@@ -79,12 +77,6 @@ const display = () => {
   setTimeout(setFadeOut, 3000);
 }
 
-
 /*** Advance to the next slide every two seconds */
 let interval = 3000;
 let slideShowTimer = setInterval(display, interval);
-
-/*** To-do */
-/*
-[ ] Implement CSS fade in and fade out
-*/

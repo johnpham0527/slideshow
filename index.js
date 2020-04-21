@@ -55,8 +55,10 @@ addLoadEvent(preloader);
 const setFadeIn = () => {
     //https://www.digitalocean.com/community/tutorials/how-to-modify-attributes-classes-and-styles-in-the-dom
     let slide = document.querySelector("#app");
-    slide.setAttribute("class", "fadeIn");
+    slide.classList.add("fadeIn");
 }
+
+
 
 /*** Function to display next slide */
 const display = () => {
@@ -68,6 +70,8 @@ const display = () => {
   let outputLink = URL + picturesArray[count++];
   test.innerHTML = `<img src=${outputLink} alt="slideshow">`;
   
+  let fadeIn = 
+
 }
 
 

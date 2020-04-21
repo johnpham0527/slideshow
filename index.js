@@ -80,13 +80,13 @@ const display = () => {
   let outputLink = URL + picturesArray[count++];
   test.innerHTML = `<img src=${outputLink} alt="slideshow">`;
   
-  let fadeIn = setTimeout(setFadeIn, 500);
-  let fadeOut = setTimeout(setFadeOut, 1000);
+  let fadeIn = setTimeout(setFadeIn, 2000);
+  let fadeOut = setTimeout(setFadeOut, 3000);
 }
 
 
 /*** Advance to the next slide every two seconds */
-let interval = 1000;
+let interval = 3000;
 let slideShowTimer = setInterval(display, interval);
 
 /*** To-do */

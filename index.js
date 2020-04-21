@@ -63,6 +63,13 @@ const removeFadeIn = () => {
     slide.classList.remove("fadeOut");
 }
 
+const setFadeOut = () => {
+    //https://www.digitalocean.com/community/tutorials/how-to-modify-attributes-classes-and-styles-in-the-dom
+    let slide = document.querySelector("#app");
+    slide.classList.remove("fadeOut");
+    slide.classList.add("fadeOut");
+}
+
 /*** Function to display next slide */
 const display = () => {
 

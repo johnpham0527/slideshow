@@ -58,7 +58,10 @@ const setFadeIn = () => {
     slide.classList.add("fadeIn");
 }
 
-
+const removeFadeIn = () => {
+    let slide = document.querySelector("#app");
+    slide.classList.remove("fadeOut");
+}
 
 /*** Function to display next slide */
 const display = () => {

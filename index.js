@@ -52,8 +52,10 @@ function addLoadEvent(func) {
 addLoadEvent(preloader);
 
 /*** Function to fade in */
-const fadeIn = () => {
+const setFadeIn = () => {
     //https://www.digitalocean.com/community/tutorials/how-to-modify-attributes-classes-and-styles-in-the-dom
+    let slide = document.querySelector("#app");
+    slide.setAttribute("class", "fadeIn");
 }
 
 /*** Function to display next slide */

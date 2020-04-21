@@ -75,8 +75,8 @@ const display = () => {
   let outputLink = URL + picturesArray[count++];
   test.innerHTML = `<img src=${outputLink} alt="slideshow">`;
   
-  let fadeIn = setTimeout(setFadeIn, 2000);
-  let fadeOut = setTimeout(setFadeOut, 3000);
+  setTimeout(setFadeIn, 2100);
+  setTimeout(setFadeOut, 3000);
 }
 
 

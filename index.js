@@ -60,13 +60,13 @@ const setFadeIn = () => {
 
 const removeFadeIn = () => {
     let slide = document.querySelector("#app");
-    slide.classList.remove("fadeOut");
+    slide.classList.remove("fadeIn");
 }
 
 const setFadeOut = () => {
     //https://www.digitalocean.com/community/tutorials/how-to-modify-attributes-classes-and-styles-in-the-dom
     let slide = document.querySelector("#app");
-    slide.classList.remove("fadeOut");
+    slide.classList.remove("fadeIn");
     slide.classList.add("fadeOut");
 }
 
@@ -81,7 +81,7 @@ const display = () => {
   test.innerHTML = `<img src=${outputLink} alt="slideshow">`;
   
   let fadeIn = setTimeout(setFadeIn, 500);
-
+  let fadeOut = setTimeout(setFadeOut, 1000);
 }
 
 
